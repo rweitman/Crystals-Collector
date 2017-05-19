@@ -1,0 +1,95 @@
+body{
+	padding: 0;
+	margin: 0;
+	background-image: url(../images/background-pattern.jpg);
+	background-repeat: repeat;
+	zoom: 40%;
+}
+
+#appear {
+width: 300px;
+background-color:white;
+color:black;
+text-align: center;
+padding: 25px;
+padding-top: 10px;
+margin: 25px;
+}
+
+#title {
+width: 500px;
+background-color:orange;
+color:white;
+padding: 25px;
+margin: 25px;
+}
+
+#instructions {
+width: 800px;
+background-color:beige;
+color:green;
+padding: 25px;
+margin: 25px;
+}
+
+#the_number {
+width: 300px;
+background-color:lightgreen;
+color:red;
+font-size:50px;
+padding: 25px;
+margin: 25px;
+float:left;
+height: 250px;
+}
+
+#stats {
+width: 300px;
+background-color:lightblue;
+color:green;
+padding: 25px;
+margin: 25px;
+height: 250px;
+float:left;
+}
+
+.big_size{
+	font-weight:bold;
+	font-size: 50px;
+}
+
+.medium_size{
+	font-size: 30px;
+}
+
+#gemstones
+{
+clear:both;
+	float:left;
+}
+
+#score {
+clear:both;
+float:left;
+width: 400px;
+background-color:blue;
+color:white;
+padding: 25px;
+margin: 25px;
+}
+
+
+.gems {
+	padding-left:20px;
+}
+
+#game_console {
+	clear:both;
+	float:left;
+	width: 850px;
+	background-color:white;
+	color:black;
+	font-weight: bold;
+	padding: 25px;
+	margin: 25px;
+}
