@@ -1,6 +1,6 @@
 # Crystals-Collector
 
-![img](./assets/images/img_blue_gem.jpg)![img](./assets/images/img_green_gem.jpg)![img](./assets/images/img_red_gem.jpg)![img](./assets/images/img_yellow_gem.jpg)
+![img](./assets/images/blue_gem.jpg)![img](./assets/images/green_gem.jpg)![img](./assets/images/red_gem.jpg)![img](./assets/images/yellow_gem.jpg)
 
 The Crystals Collector game involves Instructions, Crystal Collector Title, Objective (Target) Number, Win/Loss Statistics, Current Number & a Game Console.
 
