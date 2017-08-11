@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Crystal Collector Game</title>
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<head>
+  <meta charset="UTF-8">
+  <title>Crystal Collector Game</title>
+  <!-- Reset.css clears formatting -->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- This stylesheet link makes bootstrap code accessible in the app -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- Style.css adds formatting -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  </head>
+ <!--  The jQuery library is a single JavaScript file, and you reference it with the HTML script tag -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
 
 <body>
-<div id="appear" class="medium_size">
-			<h3>INSTRUCTIONS</h3>
-              <!--Shows and hides the instructions-->
-              <button class="btn btn-default btn-lg vis-button"><span class="glyphicon glyphicon-eye-open"></span> Show</button>
-              <button class="btn btn-info btn-lg invis-button"><span class="glyphicon glyphicon-eye-close"></span> Hide</button>
-              </button>
+  <div id="appear" class="medium_size">
+   <h3>INSTRUCTIONS</h3>
+   <!--Shows and hides the instructions-->
+   <button class="btn btn-default btn-lg vis-button"><span class="glyphicon glyphicon-eye-open"></span> Show</button>
+   <button class="btn btn-info btn-lg invis-button"><span class="glyphicon glyphicon-eye-close"></span> Hide</button>
+ </button>
 </div>
 <!-- The Title-->
 <div id="title" class="big_size">Crystals Collector!</div>
@@ -28,7 +32,7 @@
 <div id="the_number">
   <div class="big_size">Target #:</div>
   <p>
-  <div class="medium_size" id="target"></div>
+    <div class="medium_size" id="target"></div>
   </p>
 </div>
 <!--Wins and Losses-->
@@ -51,8 +55,8 @@
   <div class="medium_size">Your Total Number: </div>
   <div class="big_size" id="total"></div>
 </div>
- 
- <!--In-Game Console in a Box-->
+
+<!--In-Game Console in a Box-->
 <div id="game_console" class="medium_size">
   GAME CONSOLE
   <hr>
@@ -60,8 +64,8 @@
 </div>
 </body>
 
- <script type="text/javascript">
-$(document).ready(function() {
+<script type="text/javascript">
+  $(document).ready(function() {
 
       //Click the visibility button to show the instructions
       $(".vis-button").on("click", function() 
@@ -89,142 +93,142 @@ $(document).ready(function() {
       //Sets up a new game
       function newGame(){
         //Set the red number as a random number between 1 and 12
-      	var red_number = Math.floor(Math.random() * 12) + 1;
-      	console.log("RED: " + red_number)
+        var red_number = Math.floor(Math.random() * 12) + 1;
+        console.log("RED: " + red_number)
         //Set the blue number as a random number between 1 and 12
-      	var blue_number = Math.floor(Math.random() * 12) + 1;
-      	console.log("BLUE: " + blue_number)
+        var blue_number = Math.floor(Math.random() * 12) + 1;
+        console.log("BLUE: " + blue_number)
         //Set the yellow number as a random number between 1 and 12
-      	var yellow_number = Math.floor(Math.random() * 12) + 1;
-      	console.log("YELLOW: " + yellow_number)
+        var yellow_number = Math.floor(Math.random() * 12) + 1;
+        console.log("YELLOW: " + yellow_number)
         //Set the green number as a random number between 1 and 12
-      	var green_number = Math.floor(Math.random() * 12) + 1;
-      	console.log("GREEN: " + green_number)
+        var green_number = Math.floor(Math.random() * 12) + 1;
+        console.log("GREEN: " + green_number)
 
         //Set the target number as a random number between 19 and 120
-      	target_number = Math.floor(Math.random() * 102) + 19;
-      	console.log("TARGET: " + target_number)
+        target_number = Math.floor(Math.random() * 102) + 19;
+        console.log("TARGET: " + target_number)
 
         //Sets the score as 0 when you start a new game
-      	score=0;
+        score=0;
 
         //Apply the random numbers to the related gem objects
-      	$("#red").val(red_number);
-      	$("#blue").val(blue_number);
-      	$("#yellow").val(yellow_number);
-      	$("#green").val(green_number);
+        $("#red").val(red_number);
+        $("#blue").val(blue_number);
+        $("#yellow").val(yellow_number);
+        $("#green").val(green_number);
 
         //Sends the number of wins and losses to the stats box
-      	document.getElementById("wins").innerHTML = wins;
-      	document.getElementById("losses").innerHTML = losses;
+        document.getElementById("wins").innerHTML = wins;
+        document.getElementById("losses").innerHTML = losses;
 
         //Sends the new target number to the the_number box
-      	document.getElementById("target").innerHTML = target_number;
+        document.getElementById("target").innerHTML = target_number;
       }
 
       //Checks to see if you have won or lost
       function continueGame(){
 
           //You win if your target number is your score
-      		if (target_number === score)
-      		{
+          if (target_number === score)
+          {
             //You get another win credit
-      			wins++;
+            wins++;
             //Sends winning information to the in-game console
-      			document.getElementById("wins").innerHTML = wins;
-      			document.getElementById("console_log").innerHTML = "You won!  " + "||| RED:" + $("#red").val() +"|BLUE: " + $("#blue").val() + "|YELLOW: " + $("#yellow").val() + "|GREEN: " + $("#green").val() + "|||";
+            document.getElementById("wins").innerHTML = wins;
+            document.getElementById("console_log").innerHTML = "You won!  " + "||| RED:" + $("#red").val() +"|BLUE: " + $("#blue").val() + "|YELLOW: " + $("#yellow").val() + "|GREEN: " + $("#green").val() + "|||";
             //Starts a new game
-      	 		newGame();
-      		}
+            newGame();
+          }
 
           //You lose if your target number is less than your score
-      	 	if (target_number < score)
-      	 	{
+          if (target_number < score)
+          {
             //You get another loss credit
-      	 		losses++;
+            losses++;
             //Sends losing information to the in-game console 
-      	 		document.getElementById("losses").innerHTML = losses;
-      	 		document.getElementById("console_log").innerHTML = "You lost!  " + "||| RED:" + $("#red").val() +"|BLUE: " + $("#blue").val() + "|YELLOW: " + $("#yellow").val() + "|GREEN: " + $("#green").val() + "|||";
+            document.getElementById("losses").innerHTML = losses;
+            document.getElementById("console_log").innerHTML = "You lost!  " + "||| RED:" + $("#red").val() +"|BLUE: " + $("#blue").val() + "|YELLOW: " + $("#yellow").val() + "|GREEN: " + $("#green").val() + "|||";
             //Starts a new game
-      	 		newGame();
-      	 	}
-      	 
-      }
+            newGame();
+          }
+
+        }
 
 
       //Function starts when the red gem has been clicked
       $("#red").on("click", function() {
           //The value of the red gem is set to a variable
-      		var red = $("#red").val();
+          var red = $("#red").val();
           //The variable is turned into an integer
-      		red = parseInt(red);
+          red = parseInt(red);
           //The score increases by the value of the red gem
-      		score = red + score;
+          score = red + score;
           //Sends red gem information to the in-game console
-      		document.getElementById("console_log").innerHTML = "You clicked the red gem!";
+          document.getElementById("console_log").innerHTML = "You clicked the red gem!";
           console.log("ADD: " + red + "<br>SCORE: " + score);
           //Updates the total number by thew newly calculated score
           document.getElementById("total").innerHTML = score;
           //Starts a function that checks for winning and losing
           continueGame();
-      } )
+        } )
 
       //Function starts when the blue gem has been clicked
       $("#blue").on("click", function() {
           //The value of the blue gem is set to a variable
-      		var blue = $("#blue").val();
+          var blue = $("#blue").val();
           //The variable is turned into an integer
-      		blue = parseInt(blue);
+          blue = parseInt(blue);
           //The score increases by the value of the blue gem
-      		score = blue + score;
+          score = blue + score;
           //Sends blue gem information to the in-game console
-      		document.getElementById("console_log").innerHTML = "You clicked the blue gem!";
+          document.getElementById("console_log").innerHTML = "You clicked the blue gem!";
           console.log("ADD: " + blue + "<br>SCORE: " + score);
           //Updates the total number by thew newly calculated score
           document.getElementById("total").innerHTML = score;
           //Starts a function that checks for winning and losing
           continueGame();
-      } )
+        } )
 
       //Function starts when the yellow gem has been clicked
       $("#yellow").on("click", function() {
          //The value of the yellow gem is set to a variable
-      		var yellow = $("#yellow").val();
+         var yellow = $("#yellow").val();
           //The variable is turned into an integer
-      		yellow = parseInt(yellow);
+          yellow = parseInt(yellow);
           //The score increases by the value of the yellow gem
-      		score = yellow + score;
+          score = yellow + score;
           //Sends yellow gem information to the in-game console
-      		document.getElementById("console_log").innerHTML = "You clicked the yellow gem!";
+          document.getElementById("console_log").innerHTML = "You clicked the yellow gem!";
           console.log("ADD: " + yellow + "<br>SCORE: " + score);
           //Updates the total number by thew newly calculated score
           document.getElementById("total").innerHTML = score;
           //Starts a function that checks for winning and losing
           continueGame();
-      } )
+        } )
       //Function starts when the green gem has been clicked
       $("#green").on("click", function() {
           //The value of the green gem is set to a variable
-      		var green = $("#green").val();
+          var green = $("#green").val();
           //The variable is turned into an integer
-      		green = parseInt(green);
+          green = parseInt(green);
            //The score increases by the value of the green gem
-      		score = green + score;
+           score = green + score;
           //Sends green gem information to the in-game console
-      		document.getElementById("console_log").innerHTML = "You clicked the green gem!";
+          document.getElementById("console_log").innerHTML = "You clicked the green gem!";
           console.log("ADD: " + green + "<br>SCORE: " + score);
           //Updates the total number by thew newly calculated score
           document.getElementById("total").innerHTML = score;
           //Starts a function that checks for winning and losing
           continueGame();
-      } )
+        } )
 
 
-  })
+    })
 
 
 
 
- </script>
- </body>
- </html>
+  </script>
+</body>
+</html>
